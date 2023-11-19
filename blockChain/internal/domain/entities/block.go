@@ -16,6 +16,10 @@ type Block struct {
 func NewBlock(once int64, prevHash [32]byte, transactions []*Transaction) *Block {
 	panic("implement me")
 }
+func NewGenesisBlock() *Block {
+	return &Block{}
+}
+
 func (b *Block) Hash() [32]byte {
 	m, _ := json.Marshal(b)
 	return sha256.Sum256(m)
